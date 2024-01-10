@@ -8,6 +8,12 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <h1>[[${posts.id}]].[[${posts.title}]]</h1>
 <p>내용 : [[${posts.content}]]</p>
+<br>
+<br>
+<br>
+<p>해시태그 :
+    <span th:each="hashtag: ${posts.hashtags}" th:text="${hashtag.hashWord}"></span>
+</p>
 <hr>
 <div id="comment">
     <div th:if="${comments.isEmpty()}">댓글이 없어요...</div>
