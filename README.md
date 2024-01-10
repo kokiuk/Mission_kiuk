@@ -4,7 +4,9 @@
 <details>
   <summary> 토글 접기/펼치기</summary>
   <div markdown="1">
+    <hr>
     localhost:8080/board/home -> 기본 페이지
+    <hr>
       <ul>
         <li>게시판</li>
         <p>
