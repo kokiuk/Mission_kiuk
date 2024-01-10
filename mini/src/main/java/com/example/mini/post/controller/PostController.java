@@ -9,6 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
+import java.util.List;
+
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/post")
@@ -56,6 +59,14 @@ public class PostController {
             String hashtags
     ){
         System.out.println(hashtags);
+
+        List<String> hashtagList = Arrays.asList(hashtags.split(","));
+
+        for (String hash :
+                hashtagList) {
+            System.out.println(hash);
+        }
+
         postService.createPost(title, content, passwd, boardId);
         return String.format("redirect:/board/%d", boardId);
     }
