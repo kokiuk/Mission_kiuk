@@ -51,13 +51,12 @@
   </div>
 </details>
 
-#후기
+# 후기
 <details>
-  <summary>
+  <summary>힘든점</summary>
     <div markdowm="1">
       프로젝트를 하면서 어려웠던 점
     </div>
-  </summary>
 </details>
 
 
