@@ -13,7 +13,7 @@
   <p>[[${post.id}]].<a th:href="@{/post/read/{id}(id=${post.id})}">[[${post.title}]]</a></p>
 </div>
 <input type="button" onclick="location.href = '/post/createView?boardId=0';" value="작성하기">
-<input type="button" onclick="location.href = '/board/home';" value="뒤로가기">
+<input type="button" onclick="history.back();" value="뒤로가기">
 <br>
 <br>
 <br>
