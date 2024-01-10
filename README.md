@@ -53,9 +53,24 @@
 
 # 후기
 <details>
-  <summary>힘든점</summary>
+  <summary>토글 접기/펼치기</summary>
     <div markdowm="1">
-      프로젝트를 하면서 어려웠던 점
+      처음에는 Controoler, Entity, Repository, Service 가 어떤식으로 만들고 활용하는지 잘 몰랐는데,
+      계속 하다보니 점점 더 익숙해지는 것 같다.  
+      MVC패턴이 어떤식으로 흘러가는지 이해가 되는 것 같다.  
+      Jpa도 마찬가지로 서버에서 데이터를 어떻게 가져오고 보내야 할지 프로젝트를 진행하면서 점점 더 깨달아 가는 것 같다.
+    </div>
+    <div markdowm="1">
+      힘들었던 부분은 Entity에서 관계를 설정하는 것인데, One to Many, Many to One, Many to Many 등 관계를 어떻게 설정하고,
+      어떻게 Mapping을 해줘야 하는지 너무 어려웠다.  
+      서칭을 하며 관계를 설정하는것에 성공하였지만, 아직 이해도가 높지 않아서 이 부분에 관하여 더욱 더 학습을 해야할 것 같다.  
+      또한 특정 Contolloer에서 Servie를 @Autowired 를 쓰지 않으면 NullPointerException이 나타나는데, 이것에 대한 원인을 잘 모르겠다.  
+    </div>
+    <div markdowm="1">
+      아쉬웠던 부분은 아무래도 프론트쪽이다.  
+      view 페이지를 먼저 작업을 해두었으면 편했을 것 같지만, 코드를 작성하며 그때 그때 페이지를 만들고 코드를 수정하다보니  
+      나중에 view페이지를 꾸미려 해도 어디서부터 손을 대야할지 가늠이 잡히지 않았다.  
+      추 후 다시 프로젝트를 진행한다면 View페이지를 어느정도 꾸며놓고 진행해야 백엔드 작업의 가독성도 좋아지고 
     </div>
 </details>
 
