@@ -2,6 +2,7 @@ package com.example.mini.post.controller;
 
 import com.example.mini.board.service.BoardService;
 import com.example.mini.comment.service.CommentService;
+import com.example.mini.hash.entity.Hash;
 import com.example.mini.hash.service.HashService;
 import com.example.mini.post.service.PostService;
 import lombok.RequiredArgsConstructor;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -65,15 +67,21 @@ public class PostController {
 
         List<String> hashtagList = Arrays.asList(hashtags.split(","));
 
+        List<Hash> postHashtags = new ArrayList<>();
         for (String hash :
                 hashtagList) {
             System.out.println(hash);
-            if (!hashService.existHash(hash)){
-                hashService.createHash(hash);
+            Hash existHash = hashService.findByHashWord(hash);
+
+            if (existHash != null){
+                postHashtags.add(existHash);
+            }else {
+                Hash createHash = hashService.createHash(hash);
+                postHashtags.add(createHash);
             }
         }
 
-        postService.createPost(title, content, passwd, boardId);
+        postService.createPost(title, content, passwd, boardId, postHashtags);
         return String.format("redirect:/board/%d", boardId);
     }
 

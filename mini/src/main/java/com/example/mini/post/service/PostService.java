@@ -3,6 +3,7 @@ package com.example.mini.post.service;
 import com.example.mini.board.entity.Board;
 import com.example.mini.board.repo.BoardRepo;
 import com.example.mini.comment.repo.CommentRepo;
+import com.example.mini.hash.entity.Hash;
 import com.example.mini.post.entity.Post;
 import com.example.mini.post.repo.PostRepo;
 import lombok.RequiredArgsConstructor;
@@ -33,7 +34,8 @@ public class PostService {
             String title,
             String content,
             String passwd,
-            Long boardId
+            Long boardId,
+            List<Hash> hashtags
     ){
         Post post = new Post();
         post.setTitle(title);
@@ -42,6 +44,7 @@ public class PostService {
         Optional<Board> optionalBoard
                 = boardRepo.findById(boardId);
         post.setBoard(optionalBoard.orElse(null));
+        post.setHashtags(hashtags);
         postRepo.save(post);
     }
 

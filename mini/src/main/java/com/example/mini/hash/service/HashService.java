@@ -12,13 +12,12 @@ public class HashService {
     @Autowired
     private HashRepo hashRepo;
 
-    public void createHash(String hashWord){
+    public Hash createHash(String hashWord){
         Hash hash = new Hash();
         hash.setHashWord(hashWord);
-        hashRepo.save(hash);
+        return hashRepo.save(hash);
     }
-
-    public boolean existHash(String hashWord){
-        return hashRepo.existsByHashWord(hashWord);
+    public Hash findByHashWord(String hashWord){
+        return hashRepo.findByHashWord(hashWord);
     }
 }
