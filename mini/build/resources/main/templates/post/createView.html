@@ -26,6 +26,9 @@
     제목 : <input type="text" id="title" name="title"><br>
     내용 : <textarea id="content" name="content" oninput="hashTag()"></textarea><br>
     비밀번호 : <input type="text" id="passwd" name="passwd"><br>
+
+    <input type="hidden" id="hashtagsInput" name="hashtags">
+
     <input type="submit">
     <input type="button" onclick="history.back()" value="뒤로가기">
 </form>
@@ -46,6 +49,8 @@
             return false;
         }
         else {
+            var hashtags = hashTag();
+            $('#hashtagsInput').val(hashtags);
             alert("게시글이 작성 되었습니다");
             return true;
         }
@@ -55,10 +60,11 @@
         var content = $('#content').val();
         var hashtags = content.match(/#[\w가-힣]+/g);
 
-        if (hashtags){
-            alert(hashtags);
-            console.log("hashtag" + hashtags.join(', '));
-        }
+        // if (hashtags){
+        //     alert(hashtags);
+        //     console.log("hashtag" + hashtags.join(', '));
+        // }
+        return hashtags ? hashtags.join(',') : "";
     }
 </script>
 </body>

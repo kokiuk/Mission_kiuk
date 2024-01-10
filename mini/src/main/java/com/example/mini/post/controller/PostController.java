@@ -51,8 +51,11 @@ public class PostController {
             @RequestParam("passwd")
             String passwd,
             @RequestParam("board_id")
-            Long boardId
+            Long boardId,
+            @RequestParam("hashtags")
+            String hashtags
     ){
+        System.out.println(hashtags);
         postService.createPost(title, content, passwd, boardId);
         return String.format("redirect:/board/%d", boardId);
     }
@@ -168,13 +171,13 @@ public class PostController {
             Model model
     ){
         if (id != 0){
-            System.out.println(id);
+//            System.out.println(id);
             model.addAttribute("posts", postService.searchPost(titleOrContent, detail, id));
             model.addAttribute("board", boardService.readBoardOne(id));
             return "/board/read";
         }
 
-        System.out.println(id);
+//        System.out.println(id);
         model.addAttribute("posts", postService.searchPostAll(titleOrContent, detail));
         return "/board/boardAll";
 
