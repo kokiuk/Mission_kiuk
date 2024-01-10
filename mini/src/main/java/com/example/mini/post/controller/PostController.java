@@ -34,7 +34,7 @@ public class PostController {
                              Long id){
         model.addAttribute("boards", boardService.readBoardAll());
         model.addAttribute("id", id);
-        System.out.println("id = " + id);
+//        System.out.println("id = " + id);
         return "post/createView";
     }
 
@@ -63,14 +63,14 @@ public class PostController {
             @RequestParam("hashtags")
             String hashtags
     ){
-        System.out.println(hashtags);
+//        System.out.println(hashtags);
 
         List<String> hashtagList = Arrays.asList(hashtags.split(","));
 
         List<Hash> postHashtags = new ArrayList<>();
         for (String hash :
                 hashtagList) {
-            System.out.println(hash);
+//            System.out.println(hash);
             Hash existHash = hashService.findByHashWord(hash);
 
             if (existHash != null){
@@ -160,8 +160,8 @@ public class PostController {
             String passwd,
             Model model
     ){
-        System.out.println(id);
-        System.out.println(passwd);
+//        System.out.println(id);
+//        System.out.println(passwd);
         model.addAttribute("posts", postService.readPostOne(id));
 
         return "post/deletePasswdCheck";
@@ -206,6 +206,20 @@ public class PostController {
         model.addAttribute("posts", postService.searchPostAll(titleOrContent, detail));
         return "/board/boardAll";
 
+    }
+
+    @GetMapping("search/{hashtag}")
+    public String searchHash(
+            @PathVariable("hashtag")
+            String hashtag,
+            Model model
+    ){
+        System.out.println(hashtag);
+
+        Hash hash = hashService.findByHashWord(hashtag);
+        model.addAttribute("posts", postService.findPostByHash(hash));
+
+        return "/hash/read";
     }
 
 

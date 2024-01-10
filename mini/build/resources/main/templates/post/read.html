@@ -12,7 +12,9 @@
 <br>
 <br>
 <p>해시태그 :
-    <span th:each="hashtag: ${posts.hashtags}" th:text="${hashtag.hashWord}"></span>
+    <span th:each="hashtag: ${posts.hashtags}">
+        <a th:href="@{/post/search/{hashtag}(hashtag=${hashtag.hashWord})}" th:text="${hashtag.hashWord}"></a>
+    </span>
 </p>
 <hr>
 <div id="comment">

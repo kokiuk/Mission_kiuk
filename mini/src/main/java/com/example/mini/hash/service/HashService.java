@@ -20,4 +20,5 @@ public class HashService {
     public Hash findByHashWord(String hashWord){
         return hashRepo.findByHashWord(hashWord);
     }
+
 }

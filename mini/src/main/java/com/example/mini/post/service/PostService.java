@@ -89,4 +89,8 @@ public class PostService {
         return postRepo.findByContentContainingOrderByIdDesc(detail);
     }
 
+    public List<Post> findPostByHash(Hash hash){
+        return postRepo.findByHashtagsOrderByIdDesc(hash);
+    }
+
 }

@@ -1,5 +1,6 @@
 package com.example.mini.post.repo;
 
+import com.example.mini.hash.entity.Hash;
 import com.example.mini.post.entity.Post;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -15,4 +16,5 @@ public interface PostRepo extends JpaRepository<Post, Long> {
     List<Post> findByTitleContainingOrderByIdDesc(String detail);
     List<Post> findByContentContainingOrderByIdDesc(String detail);
 
+    List<Post> findByHashtagsOrderByIdDesc(Hash hash);
 }
