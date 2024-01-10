@@ -8,6 +8,8 @@ import java.util.List;
 public interface PostRepo extends JpaRepository<Post, Long> {
     List<Post> findByBoard_IdOrderByIdDesc(Long id);
 
+    List<Post> findByBoard_IdAndAndTitleContainingOrderByIdDesc(Long id, String detail);
 
+    List<Post> findByBoard_IdAndAndContentContainingOrderByIdDesc(Long id, String detail);
 
 }

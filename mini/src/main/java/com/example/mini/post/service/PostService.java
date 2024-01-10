@@ -72,5 +72,11 @@ public class PostService {
         return postRepo.findAll(sort);
     }
 
+    public List<Post> searchPost(String titleOrContent, String detail, Long id){
+        if (titleOrContent.equals("title")){
+            return postRepo.findByBoard_IdAndAndTitleContainingOrderByIdDesc(id, detail);
+        }
+        return postRepo.findByBoard_IdAndAndContentContainingOrderByIdDesc(id, detail);
+    }
 
 }

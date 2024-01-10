@@ -157,6 +157,22 @@ public class PostController {
         }
     }
 
+    @PostMapping("search")
+    public String search(
+            @RequestParam("search")
+            String titleOrContent,
+            @RequestParam("searchDetail")
+            String detail,
+            @RequestParam("boardId")
+            Long id,
+            Model model
+    ){
+        System.out.println(id);
+        model.addAttribute("posts", postService.searchPost(titleOrContent, detail, id));
+        model.addAttribute("board", boardService.readBoardOne(id));
+        return "/board/read";
+    }
+
 
 
 
