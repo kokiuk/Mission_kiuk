@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Read</title>
+</head>
+<body>
+<h1>[[${board.id}]].[[${board.board}]]</h1>
+<div th:if="${posts.isEmpty()}">
+    <p>게시글이 없어요...</p>
+</div>
+<div th:unless="${posts.isEmpty()}" th:each="post: ${posts}">
+    <p>[[${post.id}]].<a th:href="@{/post/read/{id}(id=${post.id})}">[[${post.title}]]</a></p>
+</div>
+<input type="button" onclick="goToCreateView()" value="작성하기">
+<input type="button" onclick="location.href = '/board/home';" value="뒤로가기">
+
+<script>
+    function goToCreateView(){
+        var boardId = "[[${board.id}]]";
+        location.href = '/post/createView?boardId=' + boardId;
+    }
+</script>
+</body>
+</html>

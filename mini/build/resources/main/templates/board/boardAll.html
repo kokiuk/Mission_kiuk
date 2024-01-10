@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>전체 글</h1>
+<div th:if="${posts.isEmpty()}">
+    <p>게시글이 없어요...</p>
+</div>
+<div th:unless="${posts.isEmpty()}" th:each="post: ${posts}">
+    <p>[[${post.id}]].[[${post.board.board}]] : <a th:href="@{/post/read/{id}(id=${post.id})}">[[${post.title}]]</a></p>
+</div>
+<input type="button" onclick="location.href = '/board/home';" value="뒤로가기">
+</body>
+</html>
