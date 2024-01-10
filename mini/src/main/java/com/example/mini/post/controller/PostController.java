@@ -68,7 +68,9 @@ public class PostController {
         for (String hash :
                 hashtagList) {
             System.out.println(hash);
-            hashService.createHash(hash);
+            if (!hashService.existHash(hash)){
+                hashService.createHash(hash);
+            }
         }
 
         postService.createPost(title, content, passwd, boardId);

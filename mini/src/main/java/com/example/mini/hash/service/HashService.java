@@ -17,4 +17,8 @@ public class HashService {
         hash.setHashWord(hashWord);
         hashRepo.save(hash);
     }
+
+    public boolean existHash(String hashWord){
+        return hashRepo.existsByHashWord(hashWord);
+    }
 }
