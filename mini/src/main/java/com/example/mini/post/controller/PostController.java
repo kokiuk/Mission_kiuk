@@ -2,6 +2,7 @@ package com.example.mini.post.controller;
 
 import com.example.mini.board.service.BoardService;
 import com.example.mini.comment.service.CommentService;
+import com.example.mini.hash.service.HashService;
 import com.example.mini.post.service.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,8 @@ public class PostController {
     private BoardService boardService;
     @Autowired
     private CommentService commentService;
+    @Autowired
+    private HashService hashService;
 
     @GetMapping("createView")
     public String createView(Model model,
@@ -65,6 +68,7 @@ public class PostController {
         for (String hash :
                 hashtagList) {
             System.out.println(hash);
+            hashService.createHash(hash);
         }
 
         postService.createPost(title, content, passwd, boardId);
