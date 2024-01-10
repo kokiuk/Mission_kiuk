@@ -167,10 +167,17 @@ public class PostController {
             Long id,
             Model model
     ){
+        if (id != 0){
+            System.out.println(id);
+            model.addAttribute("posts", postService.searchPost(titleOrContent, detail, id));
+            model.addAttribute("board", boardService.readBoardOne(id));
+            return "/board/read";
+        }
+
         System.out.println(id);
-        model.addAttribute("posts", postService.searchPost(titleOrContent, detail, id));
-        model.addAttribute("board", boardService.readBoardOne(id));
-        return "/board/read";
+        model.addAttribute("posts", postService.searchPostAll(titleOrContent, detail));
+        return "/board/boardAll";
+
     }
 
 

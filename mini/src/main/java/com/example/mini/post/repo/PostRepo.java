@@ -12,4 +12,7 @@ public interface PostRepo extends JpaRepository<Post, Long> {
 
     List<Post> findByBoard_IdAndAndContentContainingOrderByIdDesc(Long id, String detail);
 
+    List<Post> findByTitleContainingOrderByIdDesc(String detail);
+    List<Post> findByContentContainingOrderByIdDesc(String detail);
+
 }
