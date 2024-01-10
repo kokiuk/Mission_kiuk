@@ -54,7 +54,7 @@ public class PostController {
             Long boardId
     ){
         postService.createPost(title, content, passwd, boardId);
-        return "redirect:/board/home";
+        return String.format("redirect:/board/%d", boardId);
     }
 
     @PostMapping("updateCheck")
