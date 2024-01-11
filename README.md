@@ -36,7 +36,7 @@
   <summary> 토글 접기/펼치기</summary>
   <div markdown="1">
     <hr>
-    Git clone 후 Intellij 로 mini 폴더를 열어준다  
+    Git clone 후 Intellij 로 mini 폴더를 열어준다<br>
     localhost:8080/board/home -> 기본 페이지
     <hr>
       <ul>
@@ -99,6 +99,8 @@
       어떻게 Mapping을 해줘야 하는지 너무 어려웠다.  
       서칭을 하며 관계를 설정하는것에 성공하였지만, 아직 이해도가 높지 않아서 이 부분에 관하여 더욱 더 학습을 해야할 것 같다.  
       또한 특정 Contolloer에서 Servie를 @Autowired 를 쓰지 않으면 NullPointerException이 나타나는데, 이것에 대한 원인을 잘 모르겠다.  
+      마지막에 테스트를 위해 ddl-auto: create ->update 로 수정 후, 깃 업데이트 및 테스트를 진행했을 때, 데이터가 계속 2개 들어가서 고민을하다  
+      생각해보니 create 한번 후, drop을 해줘야 한다는 것을 알고, drop후에 다시 깃 업로드를 했음.
     </div>
     <br>
     <br>
