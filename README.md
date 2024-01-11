@@ -86,6 +86,7 @@
 # 후기
 <details>
   <summary>토글 접기/펼치기</summary>
+    <hr>
     <div markdowm="1">
       처음에는 Controoler, Entity, Repository, Service 가 어떤식으로 만들고 활용하는지 잘 몰랐는데,
       계속 하다보니 점점 더 익숙해지는 것 같다.  
