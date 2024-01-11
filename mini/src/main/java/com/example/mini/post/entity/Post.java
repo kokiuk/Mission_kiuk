@@ -1,5 +1,6 @@
 package com.example.mini.post.entity;
 
+import com.example.mini.Image.entity.Image;
 import com.example.mini.board.entity.Board;
 import com.example.mini.comment.entity.Comment;
 import com.example.mini.hash.entity.Hash;
@@ -35,6 +36,8 @@ public class Post {
     @OneToMany(mappedBy = "post")
     private List<Comment> comment;
 
+    @OneToMany(mappedBy = "post")
+    private List<Image> uploadImage;
 
 
 }
