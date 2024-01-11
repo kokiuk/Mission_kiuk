@@ -36,6 +36,7 @@
   <summary> 토글 접기/펼치기</summary>
   <div markdown="1">
     <hr>
+    Git clone 후 Intellij 로 mini 폴더를 열어준다  
     localhost:8080/board/home -> 기본 페이지
     <hr>
       <ul>
